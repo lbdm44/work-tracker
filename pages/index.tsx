@@ -7,6 +7,7 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 import { AwesomeLink } from '../components/AwesomeLink';
+import LoginBtn from '../components/LoginBtn';
 
 interface LinkNode {
   id: string;
@@ -77,6 +78,7 @@ const Home: NextPage = () => {
         <title>Awesome Links</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <LoginBtn />
       <div className="container mx-auto max-w-5xl my-20">
         <div className={styles.grid}>
           {' '}
