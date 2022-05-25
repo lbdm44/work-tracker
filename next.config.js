@@ -7,6 +7,7 @@ const nextConfig = {
       'www.apollographql.com',
       'tailwindcss.com',
       'nextjs.org',
+      'avatars.githubusercontent.com',
     ],
   },
 };
