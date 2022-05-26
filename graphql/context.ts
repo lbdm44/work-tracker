@@ -1,12 +1,13 @@
 import { PrismaClient } from '@prisma/client';
 import { IncomingMessage } from 'http';
+import { DefaultSession, User } from 'next-auth';
 import { getSession } from 'next-auth/react';
 
 import { prisma } from '../lib/prisma';
 
 export type Context = {
   prisma: PrismaClient;
-  accessToken?: string;
+  user?: DefaultSession['user'];
 };
 
 export type CreateContextArgs = {
@@ -18,10 +19,8 @@ export async function createContext({
 }: CreateContextArgs): Promise<Context> {
   const session = await getSession({ req });
 
-  console.log(`createContext:accessToken: ${session?.accessToken}`);
-
   return {
     prisma,
-    accessToken: session?.accessToken,
+    user: session?.user,
   };
 }

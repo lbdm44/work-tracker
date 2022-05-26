@@ -35,7 +35,6 @@ export const LinksQuery = extendType({
         after: stringArg(),
       },
       async resolve(_, args, ctx) {
-        console.log(`accessToken: ${ctx.accessToken}`);
         let queryResults = null;
         console.dir(args);
 
